@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.ap {
+    min-height: 100vh;
+    min-width: 100wh;
+    /* background-color: rgb(255, 245, 225);; */
+}
