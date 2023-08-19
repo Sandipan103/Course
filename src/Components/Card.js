@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import "./Navbar.css";
+import { toast } from 'react-toastify';
 
 const Cardd = (props) => {
   let cource = props.cource;
@@ -24,6 +25,8 @@ const Cardd = (props) => {
     else if(like.length === 0)  setLike([cource.id]);
     else    setLike((prev) => [...prev, cource.id]);
     x=!x;
+    if(x) toast("liked");
+    else  toast("remove liked");
   };
 
   return (

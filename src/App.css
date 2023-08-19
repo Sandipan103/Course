@@ -7,3 +7,11 @@
     min-width: 100wh;
     /* background-color: rgb(255, 245, 225);; */
 }
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: xx-large;
+    border : 2px solid white;
+}

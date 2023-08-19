@@ -5,8 +5,11 @@ import Filter from "./Components/Filter";
 import Cards from "./Components/Cards";
 import { filterData, apiUrl } from "./data";
 import { useState } from "react";
+import { CircularProgress } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const darkTheme = createTheme({
   palette: {
@@ -41,15 +44,23 @@ const App = () => {
       <div className="ap">
         <Navbar />
 
-        <Filter filterData={filterData} catagory={catagory} setCatagory={setCatagory}/>
+        <Filter
+          filterData={filterData}
+          catagory={catagory}
+          setCatagory={setCatagory}
+        />
 
         <div className="all-card">
           {loading ? (
-            <h1>loading</h1>
+            <div className="spinner">
+              <h1>loading</h1>
+              <CircularProgress />
+            </div>
           ) : (
-            <Cards cources={cources} catagory={catagory}/>
+            <Cards cources={cources} catagory={catagory} />
           )}
         </div>
+        <ToastContainer />
       </div>
     </ThemeProvider>
   );
